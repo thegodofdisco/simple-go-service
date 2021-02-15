@@ -1,4 +1,4 @@
-package main
+package internal
 
 import (
 	"fmt"
@@ -41,6 +41,7 @@ func NewSuccessfulResponse() SuccessfulResponse {
 }
 
 func (p *Presenter) GetData(ctx *gin.Context) {
+	fmt.Println("HEADER: ", ctx.GetHeader("If-Modified-Since"))
 	lastModifiedHeader := ctx.GetHeader("If-Modified-Since")
 	lastModified, err := http.ParseTime(lastModifiedHeader)
 	if err != nil {

@@ -1,4 +1,4 @@
-package main_test
+package internal_test
 
 import (
 	"testing"
@@ -7,7 +7,7 @@ import (
 	. "github.com/onsi/gomega"
 )
 
-func Test(t *testing.T) {
+func TestInternal(t *testing.T) {
 	RegisterFailHandler(Fail)
-	RunSpecs(t, "Testing Suite")
+	RunSpecs(t, "Internal Suite")
 }

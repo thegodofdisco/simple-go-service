@@ -8,6 +8,7 @@ import (
 	"syscall"
 
 	"github.com/gin-gonic/gin"
+	internal "github.com/nenov92/simple-go-service/cmd/simple-go-service/internal"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 )
@@ -19,7 +20,7 @@ func main() {
 	gin.SetMode(gin.ReleaseMode)
 	handler := gin.New()
 
-	presenter := NewPresenter()
+	presenter := internal.NewPresenter()
 	handler.GET("/v1/data", presenter.GetData)
 
 	logrus.Info("preparing httpServer...")
